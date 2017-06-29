@@ -1,4 +1,4 @@
-#### How to build the Freifunk Mayen-Koblenz Firmware
+#### How to build the Freifunk Koblenz Firmware
     
     git clone https://github.com/freifunk-gluon/gluon.git          # Get the official Gluon repository
     cd gluon
