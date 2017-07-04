@@ -12,7 +12,7 @@ msgstr ""
 
 msgid "gluon-config-mode:welcome"
 msgstr ""
-"Welcome the the setup wizard of your new Freifunk Simmern node. "
+"Welcome the the setup wizard of your new Freifunk Rhein-Hunsrück-Kreis node. "
 "Please fill out the following form and transmit it."
 
 msgid "gluon-config-mode:pubkey"

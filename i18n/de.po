@@ -12,7 +12,7 @@ msgstr ""
 
 msgid "gluon-config-mode:welcome"
 msgstr ""
-"Willkommen zum Einrichtungsassistenten für deinen neuen Simmerner "
+"Willkommen zum Einrichtungsassistenten für deinen neuen Rhein-Hunsrück-Kreis "
 "Freifunk-Knoten. Fülle das folgende Formular deinen Vorstellungen "
 "entsprechend aus und sende es ab. Die Angaben helfen den Standort "
 "des Routers zu finden und dich im Falle eines Fehlers deines Routers zu "
