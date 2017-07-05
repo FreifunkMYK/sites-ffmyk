@@ -48,7 +48,7 @@ DEFAULT_GLUON_RELEASE := 0.1-ffmy-$(shell date '+%Y%m%d')
 #			gluon-ff%site_code%-23.42+5-%router_model%.bin
 
 # Allow overriding the release number from the command line
-GLUON_RELEASE ?= "nightly"
+GLUON_RELEASE ?= nightly
 
 # Default priority for updates.
 GLUON_PRIORITY ?= 30
