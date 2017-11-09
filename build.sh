@@ -21,7 +21,13 @@ for SITE in $SITES; do
 	make update
 	for TARGET in ${TARGETS}; do
 		echo ${SITE} ${TARGET}
-		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
+		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
+		RESULT=$?
+		if [ $RESULT -ne 0 ]; then
+			echo $SITE $TARGET failed;
+			rm -f site output
+			exit 1;
+		fi
 	done
 	make GLUON_BRANCH=autoupdater GLUON_PRIORITY=${AUTOUPDATER_PRIORITY} GLUON_RELEASE=${RELEASE} manifest
 	make GLUON_BRANCH=stable GLUON_RELEASE=${RELEASE} manifest
@@ -29,6 +35,9 @@ for SITE in $SITES; do
 	mv output/images/sysupgrade/stable.manifest ${SCRIPTPATH}/output/$RELEASE/${SITE}.stable.manifest
 	mv output/packages/* ${SCRIPTPATH}/output/$RELEASE/packages/
 	mv output/images ${SCRIPTPATH}/output/$RELEASE/${SITE}
+	for TARGET in ${TARGETS}; do
+		make clean GLUON_TARGET=${TARGET}
+	done
 	rm -f site
 	cd ..
 done
