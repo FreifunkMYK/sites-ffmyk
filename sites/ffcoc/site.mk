@@ -29,7 +29,8 @@ GLUON_SITE_PACKAGES := \
 	haveged \
 	iptables \
 	iwinfo \
-	respondd-module-airtime
+	respondd-module-airtime \
+	ffffm-button-bind
 
 #############################
 # Additional package sets
