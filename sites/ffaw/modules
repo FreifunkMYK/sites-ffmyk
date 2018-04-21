@@ -1,3 +1,4 @@
 GLUON_SITE_FEEDS='ffmyk_packages'
 PACKAGES_FFMYK_PACKAGES_REPO=https://github.com/FreifunkMYK/gluon-packages-extra.git
 PACKAGES_FFMYK_PACKAGES_COMMIT=02cd9dc9ea61fbb5ed3f013d863ca60dee505dcf
+PACKAGES_FFMYK_PACKAGES_BRANCH=2017.1.x
