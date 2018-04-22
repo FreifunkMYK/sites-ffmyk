@@ -185,7 +185,7 @@ GLUON_RELEASE ?= nightly
 GLUON_PRIORITY ?= 30
 
 # Mesh-enabled firmware for ATH10K based devices
-GLUON_ATH10K_MESH ?= 11s
+GLUON_WLAN_MESH ?= 11s
 
 # Region code required for some images; supported values: us eu
 GLUON_REGION ?= eu
