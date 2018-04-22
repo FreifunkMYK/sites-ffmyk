@@ -187,7 +187,7 @@ GLUON_RELEASE ?= nightly
 GLUON_PRIORITY ?= 30
 
 # Use 802.11s for mesh links
-GLUON_WLAN_MESH ?= 11s
+GLUON_ATH10K_MESH ?= 11s
 
 # Region code required for some images; supported values: us eu
 GLUON_REGION ?= eu
