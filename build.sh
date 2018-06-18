@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
