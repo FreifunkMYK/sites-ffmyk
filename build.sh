@@ -12,6 +12,15 @@ AUTOUPDATER_PRIORITY=10
 
 RELEASE=$1
 
+if [ ! -z $2 ]; then
+    SITES=$2
+fi
+
+if [ ! -z $3 ]; then
+    TARGETS=$3
+fi
+
+
 rm -rf $SCRIPTPATH/output/$RELEASE
 mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 
