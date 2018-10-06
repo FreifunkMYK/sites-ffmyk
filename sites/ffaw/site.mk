@@ -22,7 +22,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	gluon-status-page \
 	gluon-web-admin \
-	gluon-web-autoupdater \
 	gluon-web-network \
 	gluon-web-private-wifi \
 	gluon-web-wifi-config \
@@ -30,7 +29,9 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	iwinfo \
 	respondd-module-airtime \
-	ffffm-button-bind
+	ffffm-button-bind \
+	ffho-autoupdater-wifi-fallback \
+	ffho-web-autoupdater
 
 #############################
 # Additional package sets

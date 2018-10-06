@@ -30,7 +30,9 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	iwinfo \
 	respondd-module-airtime \
-	ffffm-button-bind
+	ffffm-button-bind \
+	ffho-autoupdater-wifi-fallback \
+	ffho-web-autoupdater
 
 #############################
 # Additional package sets
