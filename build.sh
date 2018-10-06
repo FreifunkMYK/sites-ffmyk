@@ -31,7 +31,7 @@ for SITE in $SITES; do
 	make update
 	for TARGET in ${TARGETS}; do
 		echo ${SITE} ${TARGET}
-		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
+		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
 		RESULT=$?
 		if [ $RESULT -ne 0 ]; then
 			echo $SITE $TARGET failed;
