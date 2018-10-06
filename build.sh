@@ -4,7 +4,7 @@ set -x
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
 SITES="ffaw ffcoc ffems ffko ffmy ffsim"
-TARGETS="ar71xx-generic ar71xx-mikrotik ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 brcm2708-bcm2710 ipq806x mpc85xx-generic ramips-mt7620 ramips-mt7621 ramips-mt7628 ramips-rt305x sunxi x86-generic x86-geode x86-64"
+TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 mpc85xx-generic ramips-mt7621 x86-generic x86-geode x86-64"
 
 CORES=$(nproc)
 MAKEOPTS="-j$((CORES+1))"
@@ -31,7 +31,7 @@ for SITE in $SITES; do
 	make update
 	for TARGET in ${TARGETS}; do
 		echo ${SITE} ${TARGET}
-		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable BROKEN=1
+		make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
 		RESULT=$?
 		if [ $RESULT -ne 0 ]; then
 			echo $SITE $TARGET failed;
