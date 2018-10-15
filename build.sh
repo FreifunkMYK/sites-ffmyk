@@ -28,6 +28,9 @@ mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 for SITE in $SITES; do
 	ln -s ${SCRIPTPATH}/sites/${SITE} ${SCRIPTPATH}/gluon/site
 	cd gluon
+	for patch in ${SCRIPTPATH}/patches/*.patch; do
+		git apply $patch
+	done
 	make update
 	for TARGET in ${TARGETS}; do
 		echo ${SITE} ${TARGET}
