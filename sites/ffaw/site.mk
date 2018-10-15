@@ -31,7 +31,8 @@ GLUON_SITE_PACKAGES := \
 	respondd-module-airtime \
 	ffffm-button-bind \
 	ffho-autoupdater-wifi-fallback \
-	ffho-web-autoupdater
+	ffho-web-autoupdater \
+	gluon-set-domain
 
 #############################
 # Additional package sets
