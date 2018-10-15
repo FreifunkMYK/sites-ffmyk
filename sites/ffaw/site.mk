@@ -32,7 +32,8 @@ GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	ffho-autoupdater-wifi-fallback \
 	ffho-web-autoupdater \
-	gluon-set-domain
+	gluon-set-domain \
+	gluon-ssid-changer
 
 #############################
 # Additional package sets

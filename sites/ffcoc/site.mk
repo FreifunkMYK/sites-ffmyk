@@ -22,7 +22,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	gluon-status-page \
 	gluon-web-admin \
-	gluon-web-autoupdater \
 	gluon-web-network \
 	gluon-web-private-wifi \
 	gluon-web-wifi-config \
@@ -33,7 +32,8 @@ GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	ffho-autoupdater-wifi-fallback \
 	ffho-web-autoupdater \
-	gluon-set-domain
+	gluon-set-domain \
+	gluon-ssid-changer
 
 #############################
 # Additional package sets
