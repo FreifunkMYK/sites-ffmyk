@@ -3,7 +3,7 @@ set -x
 
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
-TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 mpc85xx-generic ramips-mt7621 x86-generic x86-geode x86-64"
+TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 mpc85xx-generic ramips-mt7621 sunxi x86-generic x86-geode x86-64"
 
 CORES=$(nproc)
 MAKEOPTS="-j$((CORES+1))"
