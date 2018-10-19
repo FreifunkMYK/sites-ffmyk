@@ -21,14 +21,17 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	gluon-status-page \
 	gluon-web-admin \
-	gluon-web-autoupdater \
 	gluon-web-network \
 	gluon-web-private-wifi \
 	gluon-web-wifi-config \
 	haveged \
 	iptables \
 	iwinfo \
-	respondd-module-airtime
+	respondd-module-airtime \
+	ffffm-button-bind \
+	ffho-autoupdater-wifi-fallback \
+	ffho-web-autoupdater \
+	gluon-ssid-changer
 
 #############################
 # Additional package sets
