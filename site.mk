@@ -1,38 +1,31 @@
 ##	gluon site.mk makefile for Freifunk Mayen-Koblenz
 
-##	GLUON_SITE_PACKAGES
-#		specify gluon/openwrt packages to include here
+GLUON_FEATURES := \
+	autoupdater \
+	autoupdater-fallback \
+	mesh-vpn-fastd \
+	web-advanced \
+	web-wizard
+
 GLUON_SITE_PACKAGES := \
-	gluon-autoupdater \
+	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-core \
 	gluon-config-mode-domain-select \
 	gluon-config-mode-geo-location-osm \
-	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-source-filter \
 	gluon-mesh-batman-adv-15 \
-	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-respondd \
 	gluon-setup-mode \
+	gluon-ssid-changer \
 	gluon-status-page \
-	gluon-web-admin \
-	gluon-web-network \
 	gluon-web-private-wifi \
-	gluon-web-wifi-config \
 	haveged \
 	iptables \
 	iwinfo \
-	respondd-module-airtime \
-	ffffm-button-bind \
-	ffho-autoupdater-wifi-fallback \
-	ffho-web-autoupdater \
-	gluon-ssid-changer
+	respondd-module-airtime
 
 #############################
 # Additional package sets
