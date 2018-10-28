@@ -11,7 +11,7 @@ GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
 	gluon-config-mode-domain-select \
-	gluon-config-mode-geo-location-osm \
+	gluon-config-mode-geo-location-map \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-source-filter \
