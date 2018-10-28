@@ -11,7 +11,29 @@ MAKEOPTS="-j$((CORES+1))"
 RELEASE=$1
 
 if [ ! -z $2 ]; then
-    TARGETS=$2
+    case $2 in
+        ar71xx)
+            TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny"
+            ;;
+        brcm2708)
+            TARGETS="brcm2708-bcm2708 brcm2708-bcm2709"
+            ;;
+        mpc85xx)
+            TARGETS="mpc85xx-generic"
+            ;;
+        ramips)
+            TARGETS="ramips-mt7621"
+            ;;
+        sunxi)
+            TARGETS="sunxi"
+            ;;
+        x86)
+            TARGETS="x86-generic x86-geode x86-64"
+            ;;
+        *)
+            TARGETS=$2
+            ;;
+    esac
 fi
 
 
