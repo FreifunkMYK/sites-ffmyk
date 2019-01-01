@@ -47,7 +47,6 @@ USB_PACKAGES_SERIAL := \
 USB_PACKAGES_STORAGE := \
 	block-mount \
 	blkid \
-	kmod-fs-exfat \
 	kmod-fs-ext4 \
 	kmod-fs-ntfs \
 	kmod-fs-vfat \
