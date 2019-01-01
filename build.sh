@@ -3,7 +3,7 @@ set -x
 
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
-TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 mpc85xx-generic ramips-mt7621 sunxi-cortexa7 x86-generic x86-geode x86-64"
+TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny brcm2708-bcm2708 brcm2708-bcm2709 ipq40xx mpc85xx-generic ramips-mt7620 ramips-mt7621 ramips-mt76x8 ramips-rt305x sunxi-cortexa7 x86-generic x86-geode x86-64"
 
 CORES=$(nproc)
 MAKEOPTS="-j$((CORES+1))"
@@ -18,11 +18,14 @@ if [ ! -z $2 ]; then
         brcm2708)
             TARGETS="brcm2708-bcm2708 brcm2708-bcm2709"
             ;;
+        ipq40xx)
+            TARGETS="ipq40xx"
+            ;;
         mpc85xx)
             TARGETS="mpc85xx-generic"
             ;;
         ramips)
-            TARGETS="ramips-mt7621"
+            TARGETS="ramips-mt7620 ramips-mt7621 ramips-mt76x8 ramips-rt305x"
             ;;
         sunxi)
             TARGETS="sunxi-cortexa7"
