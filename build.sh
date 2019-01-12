@@ -55,7 +55,8 @@ for TARGET in ${TARGETS}; do
     RESULT=$?
     if [ $RESULT -ne 0 ]; then
         echo $TARGET failed;
-        rm -f site output
+        rm -f site
+        rm -rf output
         exit 1;
     fi
 done
