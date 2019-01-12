@@ -1,7 +1,6 @@
 ##	gluon site.mk makefile for Freifunk Mayen-Koblenz
 
 GLUON_FEATURES := \
-	autoupdater \
 	autoupdater-fallback \
 	mesh-vpn-fastd \
 	web-advanced \
@@ -9,6 +8,7 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
+	gluon-autoupdater \
 	gluon-autoupdater-branch-fix \
 	gluon-config-mode-domain-select \
 	gluon-config-mode-geo-location-osm \
