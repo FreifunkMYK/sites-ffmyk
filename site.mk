@@ -17,6 +17,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-source-filter \
 	gluon-mesh-batman-adv-15 \
+	gluon-radv-filterd \
 	gluon-radvd \
 	gluon-respondd \
 	gluon-setup-mode \
