@@ -2,6 +2,7 @@
 
 GLUON_FEATURES := \
 	autoupdater-fallback \
+	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
 	web-advanced \
 	web-wizard
@@ -16,9 +17,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-source-filter \
-	gluon-mesh-batman-adv-15 \
 	gluon-radv-filterd \
-	gluon-radvd \
 	gluon-respondd \
 	gluon-setup-mode \
 	gluon-ssid-changer \
@@ -192,3 +191,5 @@ GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
 
 GLUON_MULTIDOMAIN = 1
+
+GLUON_DEPRECATED = full
