@@ -181,9 +181,6 @@ GLUON_RELEASE ?= nightly
 # Default priority for updates.
 GLUON_PRIORITY ?= 30
 
-# Use 802.11s for mesh links
-GLUON_WLAN_MESH ?= 11s
-
 # Region code required for some images; supported values: us eu
 GLUON_REGION ?= eu
 
