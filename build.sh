@@ -3,8 +3,6 @@ set -x
 
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
-TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny ath79-generic brcm2708-bcm2708 brcm2708-bcm2709 ipq40xx-generic ipq806x-generic lantiq-xrx200 lantiq-xway mpc85xx-generic mpc85xx-p1020 ramips-mt7620 ramips-mt7621 ramips-mt76x8 ramips-rt305x sunxi-cortexa7 x86-generic x86-geode x86-64"
-
 CORES=$(nproc)
 MAKEOPTS="-j$((CORES+1))"
 
@@ -15,6 +13,7 @@ mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 
 ln -s ${SCRIPTPATH} ${SCRIPTPATH}/gluon/site
 cd gluon
+TARGETS="$(make list-targets)"
 for patch in ${SCRIPTPATH}/patches/*.patch; do
     git apply $patch
 done
