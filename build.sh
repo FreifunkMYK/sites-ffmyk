@@ -4,7 +4,6 @@ set -x
 SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
 CORES=$(nproc)
-MAKEOPTS="-j$((CORES+1))"
 
 RELEASE=$1
 
@@ -20,13 +19,18 @@ done
 make update
 for TARGET in ${TARGETS}; do
     echo ${TARGET}
-    make ${MAKEOPTS} GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
+    make -j$((CORES+1)) GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
     RESULT=$?
     if [ $RESULT -ne 0 ]; then
         echo $TARGET failed;
-        rm -f site
-        rm -rf output
-        exit 1;
+        make GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
+        RESULT=$?
+        if [ $RESULT -ne 0 ]; then
+            echo $TARGET failed again;
+            rm -f site
+            rm -rf output
+            exit 1;
+        fi
     fi
 done
 make GLUON_BRANCH=stable GLUON_RELEASE=${RELEASE} manifest
