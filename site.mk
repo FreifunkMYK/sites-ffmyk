@@ -23,7 +23,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-ssid-changer \
 	gluon-status-page \
 	gluon-web-private-wifi \
-	haveged \
 	iptables \
 	iwinfo \
 	respondd-module-airtime
