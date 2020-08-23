@@ -20,7 +20,6 @@ GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
 	gluon-config-mode-geo-location-osm \
-	gluon-ssid-changer \
 	iptables \
 	iwinfo \
 	respondd-module-airtime
