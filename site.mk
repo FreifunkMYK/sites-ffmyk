@@ -13,7 +13,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-autoupdater-branch-fix \
 	gluon-config-mode-domain-select \
 	gluon-config-mode-geo-location-osm \
-	gluon-config-mode-qrcode \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-source-filter \
