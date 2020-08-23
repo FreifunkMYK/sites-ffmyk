@@ -2,6 +2,15 @@
 
 GLUON_FEATURES := \
 	autoupdater-fallback \
+	config-mode-domain-select \
+	ebtables-filter-multicast \
+	ebtables-filter-ra-dhcp \
+	ebtables-source-filter \
+	radv-filterd \
+	respondd \
+	setup-mode \
+	status-page \
+	web-private-wifi \
 	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
 	web-advanced \
@@ -9,19 +18,9 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
-	gluon-autoupdater \
 	gluon-autoupdater-branch-fix \
-	gluon-config-mode-domain-select \
 	gluon-config-mode-geo-location-osm \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-ebtables-source-filter \
-	gluon-radv-filterd \
-	gluon-respondd \
-	gluon-setup-mode \
 	gluon-ssid-changer \
-	gluon-status-page \
-	gluon-web-private-wifi \
 	iptables \
 	iwinfo \
 	respondd-module-airtime
