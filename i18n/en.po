@@ -12,7 +12,7 @@ msgstr ""
 
 msgid "gluon-config-mode:welcome"
 msgstr ""
-"Welcome the the setup wizard of your new Freifunk Ahrweiler node. "
+"Welcome the the setup wizard of your new Freifunk Mayen-Koblenz node. "
 "Please fill out the following form and transmit it."
 
 msgid "gluon-config-mode:domain"
@@ -23,12 +23,6 @@ msgstr ""
 "Here you have the possibility of selecting the domain in which your node is "
 "placed. Please keep in mind that your router only connects with the nodes of "
 "the selected domain"
-
-msgid "gluon-config-mode:pubkey"
-msgstr ""
-
-msgid "gluon-config-mode:novpn"
-msgstr ""
 
 msgid "gluon-config-mode:reboot"
 msgstr ""
@@ -43,11 +37,3 @@ msgstr ""
 "<a href=\"https://lists.freifunk.net/mailman/listinfo/mayen-koblenz-announce-freifunk.net\">announce-mailinglist</a> "
 "so we can inform you about changes which require manual intervention.</p>"
 "<p>Have fun with your node and exploring the Freifunk network!</p>"
-
-msgid "gluon-config-mode:altitude-label"
-msgstr "Altitude"
-
-msgid "gluon-config-mode:altitude-help"
-msgstr ""
-"Specifying the altitude is optional and should only be done if a proper "
-"value is known."
