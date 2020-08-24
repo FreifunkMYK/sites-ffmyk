@@ -16,6 +16,9 @@ GLUON_FEATURES := \
 	web-advanced \
 	web-wizard
 
+GLUON_FEATURES_standard := \
+	wireless-encryption-wpa3
+
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
