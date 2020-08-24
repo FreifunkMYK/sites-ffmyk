@@ -27,8 +27,11 @@ for TARGET in ${TARGETS}; do
         RESULT=$?
         if [ $RESULT -ne 0 ]; then
             echo $TARGET failed again;
-            rm -f site
             rm -rf output
+            for TARGET in ${TARGETS}; do
+                make clean GLUON_TARGET=${TARGET}
+            done
+            rm -f site
             exit 1;
         fi
     fi
