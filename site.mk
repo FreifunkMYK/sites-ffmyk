@@ -17,6 +17,7 @@ GLUON_FEATURES := \
 	web-wizard
 
 GLUON_FEATURES_standard := \
+	mesh-wireless-sae \
 	wireless-encryption-wpa3
 
 GLUON_SITE_PACKAGES := \
