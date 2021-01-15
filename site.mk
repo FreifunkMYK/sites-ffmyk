@@ -20,6 +20,9 @@ GLUON_FEATURES_standard := \
 	mesh-wireless-sae \
 	wireless-encryption-wpa3
 
+GLUON_FEATURES_tiny := \
+	wpa-supplicant-dummy
+
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
