@@ -6,16 +6,17 @@ GLUON_FEATURES := \
 	config-mode-geo-location-osm \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
+	ebtables-limit-arp \
 	ebtables-source-filter \
+	mesh-batman-adv-15 \
+	mesh-vpn-fastd \
 	radv-filterd \
 	respondd \
 	setup-mode \
 	status-page \
-	web-private-wifi \
-	mesh-batman-adv-15 \
-	mesh-vpn-fastd \
 	web-advanced \
-	web-wizard
+	web-wizard \
+	web-private-wifi
 
 GLUON_FEATURES_standard := \
 	mesh-wireless-sae \
