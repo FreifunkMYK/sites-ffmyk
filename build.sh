@@ -10,13 +10,7 @@ RELEASE=$1
 rm -rf $SCRIPTPATH/output/$RELEASE
 mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 
-ln -s ${SCRIPTPATH} ${SCRIPTPATH}/gluon/site
 cd gluon
-TARGETS="$(make list-targets)"
-for patch in ${SCRIPTPATH}/patches/*.patch; do
-    git apply $patch
-done
-make update
 for TARGET in ${TARGETS}; do
     echo ${TARGET}
     make -j$((CORES+1)) GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
