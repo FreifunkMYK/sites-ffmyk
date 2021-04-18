@@ -11,6 +11,7 @@ rm -rf $SCRIPTPATH/output/$RELEASE
 mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 
 cd gluon
+TARGETS="$(make list-targets)"
 for TARGET in ${TARGETS}; do
     echo ${TARGET}
     make -j$((CORES+1)) GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
