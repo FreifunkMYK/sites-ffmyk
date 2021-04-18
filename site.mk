@@ -3,6 +3,7 @@
 GLUON_FEATURES := \
 	autoupdater-fallback \
 	config-mode-domain-select \
+	config-mode-geo-location-osm \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
 	ebtables-source-filter \
@@ -26,7 +27,6 @@ GLUON_SITE_PACKAGES_tiny := \
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
-	gluon-config-mode-geo-location-osm \
 	iptables \
 	iwinfo \
 	respondd-module-airtime
