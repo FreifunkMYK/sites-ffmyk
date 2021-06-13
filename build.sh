@@ -18,11 +18,11 @@ if [ -z "$TARGETS" ]; then
 fi
 for TARGET in ${TARGETS}; do
     echo ${TARGET}
-    make -j$((CORES+1)) GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable
+    make -j$((CORES+1)) GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_AUTOUPDATER_BRANCH=stable
     RESULT=$?
     if [ $RESULT -ne 0 ]; then
         echo $TARGET failed;
-        make GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_BRANCH=stable V=s
+        make GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_AUTOUPDATER_BRANCH=stable V=s
         RESULT=$?
         if [ $RESULT -ne 0 ]; then
             echo $TARGET failed again;
@@ -35,7 +35,7 @@ for TARGET in ${TARGETS}; do
         fi
     fi
 done
-make GLUON_BRANCH=stable GLUON_RELEASE=${RELEASE} manifest
+make GLUON_AUTOUPDATER_BRANCH=stable GLUON_RELEASE=${RELEASE} manifest
 mv output/images/sysupgrade/stable.manifest ${SCRIPTPATH}/output/$RELEASE/stable.manifest
 mv output/packages/* ${SCRIPTPATH}/output/$RELEASE/packages/
 mv output/images ${SCRIPTPATH}/output/$RELEASE/
