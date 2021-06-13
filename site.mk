@@ -171,6 +171,8 @@ endif
 #		to decide if a version is newer or not.
 DEFAULT_GLUON_RELEASE := 0.8-ffmyk-$(shell date '+%Y%m%d')
 
+# Enable autoupdater
+GLUON_AUTOUPDATER_ENABLED := 1
 
 ##	GLUON_RELEASE
 #		call make with custom GLUON_RELEASE flag, to use your own release version scheme.
