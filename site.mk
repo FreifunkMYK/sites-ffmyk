@@ -9,7 +9,7 @@ GLUON_FEATURES := \
 	ebtables-limit-arp \
 	ebtables-source-filter \
 	mesh-batman-adv-15 \
-	mesh-vpn-fastd \
+	mesh-vpn-wireguard-vxlan \
 	radv-filterd \
 	respondd \
 	setup-mode \
