@@ -1,18 +1,8 @@
-From d0f58535795e7e226439b558d86e7200adac47bc Mon Sep 17 00:00:00 2001
-From: Niklas Yann Wettengel <niyawe@niyawe.de>
-Date: Mon, 15 Oct 2018 22:16:03 +0200
-Subject: [PATCH] lede: patch iw
-
----
- .../1001-iw-patch-200-reduce-size-patch.patch | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
- create mode 100644 patches/lede/1001-iw-patch-200-reduce-size-patch.patch
-
-diff --git a/patches/lede/1001-iw-patch-200-reduce-size-patch.patch b/patches/lede/1001-iw-patch-200-reduce-size-patch.patch
+diff --git a/patches/openwrt/1001-iw-patch-200-reduce-size-patch.patch b/patches/openwrt/1001-iw-patch-200-reduce-size-patch.patch
 new file mode 100644
 index 00000000..913664ce
 --- /dev/null
-+++ b/patches/lede/1001-iw-patch-200-reduce-size-patch.patch
++++ b/patches/openwrt/1001-iw-patch-200-reduce-size-patch.patch
 @@ -0,0 +1,27 @@
 +From c65ae288f3af9b2be871dd6ae5473c64ee10fe0b Mon Sep 17 00:00:00 2001
 +From: Niklas Yann Wettengel <niyawe@niyawe.de>
@@ -41,6 +31,3 @@ index 00000000..913664ce
 +-- 
 +2.19.0
 +
--- 
-2.19.0
-
