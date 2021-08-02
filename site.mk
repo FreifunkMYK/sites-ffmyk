@@ -4,6 +4,7 @@ GLUON_FEATURES := \
 	autoupdater-fallback \
 	config-mode-domain-select \
 	config-mode-geo-location-osm \
+	config-mode-mesh-vpn \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
 	ebtables-limit-arp \
