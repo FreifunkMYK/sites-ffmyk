@@ -138,6 +138,8 @@ pkglists.append(PKGS_USB_STORAGE)
 
 PKGS_USB_NET = PackageList('USB_NET', [
 	'usb-modeswitch',
+	'ffda-usb-wan-hotplug',
+	'ffka-gluon-web-usb-wan-hotplug',
 	'kmod-mii',
 	'kmod-usb-net',
 	'kmod-usb-net-asix',

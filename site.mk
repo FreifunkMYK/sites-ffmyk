@@ -123,6 +123,8 @@ EXCLUDE_USB_STORAGE := \
 
 INCLUDE_USB_NET := \
 	usb-modeswitch \
+	ffda-usb-wan-hotplug \
+	ffka-gluon-web-usb-wan-hotplug \
 	kmod-mii \
 	kmod-usb-net \
 	kmod-usb-net-asix \
@@ -140,6 +142,8 @@ INCLUDE_USB_NET := \
 	kmod-usb-net-smsc95xx
 EXCLUDE_USB_NET := \
 	-usb-modeswitch \
+	-ffda-usb-wan-hotplug \
+	-ffka-gluon-web-usb-wan-hotplug \
 	-kmod-mii \
 	-kmod-usb-net \
 	-kmod-usb-net-asix \
