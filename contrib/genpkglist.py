@@ -170,6 +170,14 @@ PKGS_TLS = PackageList('TLS', [
 ])
 pkglists.append(PKGS_TLS)
 
+PKGS_TOOLS = PackageList('TOOLS', [
+    'iperf3',
+    'socat',
+    'tcpdump',
+    'vnstat'
+])
+pkglists.append(PKGS_TOOLS)
+
 #
 # package assignment
 #
@@ -267,7 +275,8 @@ for target in ['brcm2708-bcm2708', 'brcm2708-bcm2709', 'brcm2708-bcm2710']:
 		add_pkglist(PKGS_USB_SERIAL). \
 		add_pkglist(PKGS_USB_STORAGE). \
 		add_pkglist(PKGS_USB_HID). \
-		add_pkglist(PKGS_TLS)
+		add_pkglist(PKGS_TLS). \
+		add_pkglist(PKGS_TOOLS)
 
 targets.get('ramips-mt7621'). \
 	add_pkglist(PKGS_USB). \
@@ -302,7 +311,8 @@ for target in ['x86-64', 'x86-generic', 'x86-geode']:
 		add_pkglist(PKGS_USB_STORAGE). \
 		add_pkglist(PKGS_PCI). \
 		add_pkglist(PKGS_PCI_NET). \
-		add_pkglist(PKGS_TLS)
+		add_pkglist(PKGS_TLS). \
+		add_pkglist(PKGS_TOOLS)
 
 
 if __name__ == '__main__':
