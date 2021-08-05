@@ -137,6 +137,7 @@ PKGS_USB_STORAGE = PackageList('USB_STORAGE', [
 pkglists.append(PKGS_USB_STORAGE)
 
 PKGS_USB_NET = PackageList('USB_NET', [
+	'usb-modeswitch',
 	'kmod-mii',
 	'kmod-usb-net',
 	'kmod-usb-net-asix',
