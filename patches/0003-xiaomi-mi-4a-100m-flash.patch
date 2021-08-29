@@ -1,0 +1,22 @@
+diff --git a/patches/openwrt/0026-xiaomi-mi-4a-100m-flash.patch b/patches/openwrt/0026-xiaomi-mi-4a-100m-flash.patch
+new file mode 100644
+index 00000000..441b4856
+--- /dev/null
++++ b/patches/openwrt/0026-xiaomi-mi-4a-100m-flash.patch
+@@ -0,0 +1,16 @@
++diff --git a/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4a-100m.dts b/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4a-100m.dts
++index 626b36366d..92e3c16383 100644
++--- a/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4a-100m.dts
+++++ b/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4a-100m.dts
++@@ -14,9 +14,9 @@
++ 		read-only;
++ 	};
++ 
++-	partition@160000 {
+++	partition@260000 {
++ 		label = "firmware";
++-		reg = <0x160000 0xea0000>;
+++		reg = <0x260000 0xda0000>;
++ 		compatible = "denx,uimage";
++ 	};
++ };
