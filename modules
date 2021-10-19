@@ -1,6 +1,6 @@
 GLUON_SITE_FEEDS='ffmyk_packages community'
 PACKAGES_FFMYK_PACKAGES_REPO=https://github.com/FreifunkMYK/gluon-packages-extra.git
-PACKAGES_FFMYK_PACKAGES_COMMIT=f8a8fc51180e283b7a5a3de561e2bb8ce3c731a4
+PACKAGES_FFMYK_PACKAGES_COMMIT=0c6b9c9d845de830011e8875401309aca95b67b0
 
 PACKAGES_COMMUNITY_REPO=https://github.com/freifunk-gluon/community-packages.git
 PACKAGES_COMMUNITY_COMMIT=1d7e81b3ebda8fa4896d55c79dff7051e8c0dde4
