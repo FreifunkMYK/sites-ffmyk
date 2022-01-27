@@ -2,7 +2,6 @@
 
 GLUON_FEATURES := \
 	autoupdater-fallback \
-	config-mode-domain-select \
 	config-mode-geo-location-osm \
 	config-mode-mesh-vpn \
 	ebtables-filter-multicast \
@@ -10,14 +9,15 @@ GLUON_FEATURES := \
 	ebtables-limit-arp \
 	ebtables-source-filter \
 	mesh-batman-adv-15 \
-	mesh-vpn-wireguard-vxlan \
+	vpn-wireguard \
 	radv-filterd \
 	respondd \
 	setup-mode \
 	status-page \
 	web-advanced \
 	web-wizard \
-	web-private-wifi
+	web-private-wifi \
+	scheduled-domain-switch
 
 GLUON_FEATURES_standard := \
 	mesh-wireless-sae \
@@ -31,6 +31,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-autoupdater-branch-fix \
 	iptables \
 	iwinfo \
+	jool-tools-stateless \
+	kmod-jool-stateless \
 	respondd-module-airtime
 
 DEFAULT_GLUON_RELEASE := 0.8-ffmyk-$(shell date '+%Y%m%d')
