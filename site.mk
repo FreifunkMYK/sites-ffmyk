@@ -29,7 +29,6 @@ GLUON_SITE_PACKAGES_tiny := \
 GLUON_SITE_PACKAGES := \
 	ffffm-button-bind \
 	gluon-autoupdater-branch-fix \
-	iptables-legacy \
 	iwinfo \
 	respondd-module-airtime
 
