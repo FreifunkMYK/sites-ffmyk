@@ -7,9 +7,6 @@ CORES=$(nproc)
 
 ln -s ${SCRIPTPATH} ${SCRIPTPATH}/gluon/site
 cd gluon
-for patch in ${SCRIPTPATH}/patches/*.patch; do
-    git apply $patch
-done
 TARGETS="$(make list-targets)"
 make update
 for TARGET in ${TARGETS}; do
