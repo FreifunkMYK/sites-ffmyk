@@ -233,6 +233,8 @@ targets.get('ath79-generic'). \
 		'ubiquiti-nanostation-m-xw',
 		'ubiquiti-unifi-ac-lite',
 		'ubiquiti-unifi-ac-lr',
+		'ubiquiti-unifi-ac-mesh',
+		'ubiquiti-unifi-ac-mesh-pro',
 		'ubiquiti-unifi-ac-pro',
 		'ubiquiti-unifi-ap',
 		'ubiquiti-unifi-ap-outdoor+',
