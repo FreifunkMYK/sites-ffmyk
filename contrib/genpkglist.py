@@ -194,6 +194,7 @@ targets.get('ath79-generic'). \
 		'avm-fritz-wlan-repeater-300e',
 		'avm-fritz-wlan-repeater-450e',
 		'd-link-dap-1330-a1',
+		'd-link-dap-1365-a1',
 		'd-link-dir825b1',
 		'devolo-wifi-pro-1200e',
 		'devolo-wifi-pro-1200i',
