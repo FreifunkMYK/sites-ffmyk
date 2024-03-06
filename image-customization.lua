@@ -250,31 +250,7 @@ local exclude_usb = {
 
 --Additional packages for specific targets
 if (
-    target('ath79', 'generic') or
-    target('ath79', 'mikrotik') or
-    target('ath79', 'nand') or
-    target('ipq40xx', 'generic') or
-    target('ipq40xx', 'mikrotik') or
-    target('ipq806x', 'generic') or
-    target('lantiq', 'xrx200') or
-    target('lantiq', 'xway') or
-    target('mediatek', 'mt7622') or
-    target('mediatek', 'filogic') or
-    target('mpc85xx', 'p1010') or
-    target('mpc85xx', 'p1020') or
-    target('ramips', 'mt7620') or
-    target('ramips', 'mt7621') or
-    target('ramips', 'mt76x8') or
-    target('realtek', 'rtl838x') or
-    target('rockchip', 'armv8') or
-    target('sunxi', 'cortexa7') or
-    target('x86', '64') or
-    target('x86', 'generic') or
-    target('x86', 'geode') or
-    target('x86', 'legacy') or
-    target('armsr', 'armv7') or
-    target('armsr', 'armv8') 
-   ) and not device(exclude_tls) then
+    not device(exclude_tls) then
         packages(pkgs_tls)
 end
 
@@ -323,7 +299,6 @@ end
 
 if target('bcm27xx', 'bcm2708') or
    target('bcm27xx', 'bcm2709') then
-        packages(pkgs_tls)
         packages(pkgs_tools)
         packages(pkgs_usb)
         packages(pkgs_usb_net)
