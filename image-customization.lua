@@ -40,7 +40,9 @@ packages({
 
 -- Local package sets
 local pkgs_usb = {
-    'usbutils'
+    'usbutils',
+	'kmod-usb-core',
+	'kmod-usb2',
 }
 
 local pkgs_usb_hid = {
@@ -87,14 +89,22 @@ local pkgs_usb_net = {
     'kmod-usb-net-asix-ax88179',
     'kmod-usb-net-cdc-eem',
     'kmod-usb-net-cdc-ether',
+	'kmod-usb-net-cdc-mbim',
+	'kmod-usb-net-cdc-ncm',
     'kmod-usb-net-cdc-subset',
     'kmod-usb-net-dm9601-ether',
     'kmod-usb-net-hso',
+	'kmod-usb-net-huawei-cdc-ncm',
     'kmod-usb-net-ipheth',
+	'kmod-usb-net-kalmia',
+	'kmod-usb-net-kaweth',
     'kmod-usb-net-mcs7830',
     'kmod-usb-net-pegasus',
+	'kmod-usb-net-qmi-wwan',
     'kmod-usb-net-rndis',
+	'kmod-usb-net-rtl8150',
     'kmod-usb-net-rtl8152',
+	'kmod-usb-net-sierrawireless',
     'kmod-usb-net-smsc95xx',
 }
 
@@ -103,7 +113,11 @@ local pkgs_pci = {
 }
 
 local pkgs_pci_net = {
-    'kmod-bnx2'
+    'kmod-sky2',
+	'kmod-r8169',
+	'kmod-forcedeth',
+	'kmod-8139too',
+    'kmod-bnx2', -- Broadcom NetExtreme BCM5706/5708/5709/5716
 }
 
 local pkgs_tls = {
@@ -115,7 +129,9 @@ local pkgs_tools = {
 	'iperf3',
 	'socat',
 	'tcpdump',
-	'vnstat'
+	'vnstat',
+    'haveged',
+    'bash'
 }
 
 --exclusion lists
@@ -288,6 +304,7 @@ if target('x86', '64') or
         packages(pkgs_tools)
         packages(pkgs_usb)
         packages(pkgs_usb_net)
+        packages(pkgs_usb_hid)
         packages(pkgs_usb_serial)
         packages(pkgs_usb_storage)
 end
@@ -298,6 +315,7 @@ if target('bcm27xx', 'bcm2708') or
         packages(pkgs_tools)
         packages(pkgs_usb)
         packages(pkgs_usb_net)
+        packages(pkgs_usb_hid)
         packages(pkgs_usb_serial)
         packages(pkgs_usb_storage)
 end
@@ -306,4 +324,15 @@ if target('x86', '64') then
     --packages({'qemu-ga'})
     --qemu guest agent broken as of 2024-03-06
     --https://gitlab.com/qemu-project/qemu/-/issues/1709
+end
+
+if device({
+        'zte,mf281',
+        'glinet,gl-xe300',
+        'glinet,gl-ap1300',
+        'zte,mf289f',
+        'wavlink,ws-wn572hp3-4g',
+        'tplink,tl-mr6400-v5',
+    }) then
+        features({'web-cellular'})
 end
