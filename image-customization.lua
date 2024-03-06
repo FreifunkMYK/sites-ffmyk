@@ -138,8 +138,6 @@ local pkgs_tools = {
 
 local exclude_tls = {
     'd-link-dir825b1',
-    'tp-link-re450-v1',
-    'tp-link-re305',
 }
 
 local exclude_usb = {
@@ -175,7 +173,6 @@ local exclude_usb = {
     'tp-link-cpe510-v1',
     'tp-link-cpe510-v2',
     'tp-link-cpe510-v3',
-    'tp-link-re355-v1',
     'tp-link-tl-wdr3500-v1',
     'tp-link-tl-wdr3600-v1',
     'tp-link-tl-wdr4300-v1',
@@ -185,9 +182,6 @@ local exclude_usb = {
     'tp-link-wbs210-v1',
     'tp-link-wbs210-v2',
     'tp-link-wbs510-v1',
-    'ubiquiti-nanobeam-m5-xw',
-    'ubiquiti-nanostation-loco-m-xw',
-    'ubiquiti-nanostation-m-xw',
     'ubiquiti-unifi-ac-lite',
     'ubiquiti-unifi-ac-lr',
     'ubiquiti-unifi-ac-mesh',
@@ -221,8 +215,6 @@ local exclude_usb = {
     'tp-link-re200-v2',
     'tp-link-re200-v3',
     'd-link-dir825b1',
-    'tp-link-re450-v1',
-    'tp-link-re305', 
     'gl.inet-gl-ar300m-lite', --list below copied from Freifunk Hannover
     'gl.inet-gl-ar750',
     'netgear-wndr3700-v2',
@@ -246,7 +238,6 @@ local exclude_usb = {
     'ubiquiti-unifi-6-lr-v1',
     'zyxel-nwa55axe',
 }
-
 
 --Additional packages for specific targets
 if (
