@@ -23,36 +23,13 @@ if not device_class('tiny') then
         'mesh-wireless-sae',
         'wireless-encryption-wpa3'
     })
-end
-
-if device_class('tiny') then
+else
     features({
         'wpa-supplicant-dummy'
     })
 end
 
 -- MYK hackery - proceed at your own risk
-
--- Functions to add possibility to remove packaces or features
-local myk_cache = {}
-
-local function myk_edit_elements(element_type, element_list, remove)
-	for _, element in ipairs(element_list) do
-	    if remove then
-	        table.remove(myk_cache, element)
-	    else
-    		table.insert(myk_cache, element)
-    	end
-	end
-end
-
-function myk_packages(packages, remove)
-    if remove then
-    	myk_edit_elements('packages', packages, true)
-    else
-        myk_edit_elements('packages', packages)
-    end
-end
 
 -- Local package sets
 local pkgs_usb = {
@@ -128,68 +105,21 @@ local pkgs_tls = {
 }
 
 local pkgs_tools = {
-	'iperf3'
-	'socat'
-	'tcpdump'
+	'iperf3',
+	'socat',
+	'tcpdump',
 	'vnstat'
 }
 
---Target to package mapping
-if target('ath79', 'generic') or
-   target('ath79', 'mikrotik') or
-   target('ath79', 'nand') or
-   target('ipq40xx', 'generic') or
-   target('ipq40xx', 'mikrotik') or
-   target('ipq806x', 'generic') or
-   target('lantiq', 'xrx200') or
-   target('lantiq', 'xway') or
-   target('mediatek', 'mt7622') or
-   target('mpc85xx', 'p1010') or
-   target('mpc85xx', 'p1020') or
-   target('ramips', 'mt7620') or
-   target('ramips', 'mt7621') or
-   target('ramips', 'mt76x8') or
-   target('rockchip', 'armv8') or
-   target('sunxi', 'cortexa7') then
-        myk_packages(pkgs_tls)
-        myk_packages(pkgs_usb)
-        myk_packages(pkgs_usb_net)
-        myk_packages(pkgs_usb_serial)
-        myk_packages(pkgs_usb_storage)
+--exclusion lists
+
+local exclude_tls = {
+    'd-link-dir825b1',
+    'tp-link-re450-v1',
+    'tp-link-re305',
 }
 
-if target('x86', '64') or
-   target('x86', 'generic') or
-   target('x86', 'geode') or
-   target('x86', 'legacy') then
-        myk_packages(pkgs_pci)
-        myk_packages(pkgs_pci_net)
-        myk_packages(pkgs_tls)
-        myk_packages(pkgs_tools)
-        myk_packages(pkgs_usb)
-        myk_packages(pkgs_usb_net)
-        myk_packages(pkgs_usb_serial)
-        myk_packages(pkgs_usb_storage)
-}
-
-if target('bcm27xx', 'bcm2708') or
-   target('bcm27xx', 'bcm2709') then
-        myk_packages(pkgs_tls)
-        myk_packages(pkgs_tools)
-        myk_packages(pkgs_usb)
-        myk_packages(pkgs_usb_net)
-        myk_packages(pkgs_usb_serial)
-        myk_packages(pkgs_usb_storage)
-}
-
-if target('x86', '64') then
-    myk_packages({'qemu-ga'})
-end
-
---Device specific mappings
---Beware - this is probably outdated
-
-if device({
+local exclude_usb = {
     'avm-fritz-wlan-repeater-300e',
     'avm-fritz-wlan-repeater-450e',
     'd-link-dap-1330-a1',
@@ -292,32 +222,79 @@ if device({
     'ubiquiti-edgerouter-x',
     'ubiquiti-unifi-6-lr-v1',
     'zyxel-nwa55axe',
-}) then
-        -- Remove advanced features
-        myk_packages(pkgs_usb, true)
-        myk_packages(pkgs_usb_net, true)
-        myk_packages(pkgs_usb_serial, true)
-        myk_packages(pkgs_usb_storage, true)
 }
 
 
-if device({
-    'd-link-dir825b1',
-    'tp-link-re450-v1',
-    'tp-link-re305'
-}) then
-        -- Remove even more due to flash constrains
-        myk_packages(pkgs_tls, true)
-}
+--Additional packages for specific targets
+if (
+    target('ath79', 'generic') or
+    target('ath79', 'mikrotik') or
+    target('ath79', 'nand') or
+    target('ipq40xx', 'generic') or
+    target('ipq40xx', 'mikrotik') or
+    target('ipq806x', 'generic') or
+    target('lantiq', 'xrx200') or
+    target('lantiq', 'xway') or
+    target('mediatek', 'mt7622') or
+    target('mpc85xx', 'p1010') or
+    target('mpc85xx', 'p1020') or
+    target('ramips', 'mt7620') or
+    target('ramips', 'mt7621') or
+    target('ramips', 'mt76x8') or
+    target('rockchip', 'armv8') or
+    target('sunxi', 'cortexa7')
+   ) and not device(exclude_tls) then
+        packages(pkgs_tls)
+end
 
+if (
+    target('ath79', 'generic') or
+    target('ath79', 'mikrotik') or
+    target('ath79', 'nand') or
+    target('ipq40xx', 'generic') or
+    target('ipq40xx', 'mikrotik') or
+    target('ipq806x', 'generic') or
+    target('lantiq', 'xrx200') or
+    target('lantiq', 'xway') or
+    target('mediatek', 'mt7622') or
+    target('mpc85xx', 'p1010') or
+    target('mpc85xx', 'p1020') or
+    target('ramips', 'mt7620') or
+    target('ramips', 'mt7621') or
+    target('ramips', 'mt76x8') or
+    target('rockchip', 'armv8') or
+    target('sunxi', 'cortexa7')
+   ) and not device(exclude_usb) then
+        packages(pkgs_usb)
+        packages(pkgs_usb_net)
+        packages(pkgs_usb_serial)
+        packages(pkgs_usb_storage)
+end
 
-if device({
-    'd-link-dir825b1',
-    'tp-link-re450-v1',
-    'tp-link-re305'
-}) then
-        -- Remove even more due to flash constrains
-        myk_packages(pkgs_tls, true)
-}
+if target('x86', '64') or
+   target('x86', 'generic') or
+   target('x86', 'geode') or
+   target('x86', 'legacy') then
+        packages(pkgs_pci)
+        packages(pkgs_pci_net)
+        packages(pkgs_tls)
+        packages(pkgs_tools)
+        packages(pkgs_usb)
+        packages(pkgs_usb_net)
+        packages(pkgs_usb_serial)
+        packages(pkgs_usb_storage)
+end
 
-packages(myk_cache)
+if target('bcm27xx', 'bcm2708') or
+   target('bcm27xx', 'bcm2709') then
+        packages(pkgs_tls)
+        packages(pkgs_tools)
+        packages(pkgs_usb)
+        packages(pkgs_usb_net)
+        packages(pkgs_usb_serial)
+        packages(pkgs_usb_storage)
+end
+
+if target('x86', '64') then
+    packages({'qemu-ga'})
+end
