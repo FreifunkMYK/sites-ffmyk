@@ -259,17 +259,21 @@ if (
     target('lantiq', 'xrx200') or
     target('lantiq', 'xway') or
     target('mediatek', 'mt7622') or
+    target('mediatek', 'filogic') or
     target('mpc85xx', 'p1010') or
     target('mpc85xx', 'p1020') or
     target('ramips', 'mt7620') or
     target('ramips', 'mt7621') or
     target('ramips', 'mt76x8') or
+    target('realtek', 'rtl838x') or
     target('rockchip', 'armv8') or
     target('sunxi', 'cortexa7') or
     target('x86', '64') or
     target('x86', 'generic') or
     target('x86', 'geode') or
-    target('x86', 'legacy') 
+    target('x86', 'legacy') or
+    target('armsr', 'armv7') or
+    target('armsr', 'armv8') 
    ) and not device(exclude_tls) then
         packages(pkgs_tls)
 end
@@ -284,11 +288,13 @@ if (
     target('lantiq', 'xrx200') or
     target('lantiq', 'xway') or
     target('mediatek', 'mt7622') or
+    target('mediatek', 'filogic') or
     target('mpc85xx', 'p1010') or
     target('mpc85xx', 'p1020') or
     target('ramips', 'mt7620') or
     target('ramips', 'mt7621') or
     target('ramips', 'mt76x8') or
+    target('realtek', 'rtl838x') or
     target('rockchip', 'armv8') or
     target('sunxi', 'cortexa7')
    ) and not device(exclude_usb) then
@@ -301,7 +307,9 @@ end
 if target('x86', '64') or
    target('x86', 'generic') or
    target('x86', 'geode') or
-   target('x86', 'legacy') then
+   target('x86', 'legacy') or
+   target('armsr', 'armv7') or
+   target('armsr', 'armv8') then
         packages(pkgs_pci)
         packages(pkgs_pci_net)
         packages(pkgs_tls)
