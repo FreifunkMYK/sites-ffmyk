@@ -296,5 +296,7 @@ if target('bcm27xx', 'bcm2708') or
 end
 
 if target('x86', '64') then
-    packages({'qemu-ga'})
+    --packages({'qemu-ga'})
+    --qemu guest agent broken as of 2024-03-06
+    --https://gitlab.com/qemu-project/qemu/-/issues/1709
 end
