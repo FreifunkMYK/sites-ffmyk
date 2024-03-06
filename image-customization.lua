@@ -29,6 +29,13 @@ else
     })
 end
 
+packages({
+    'ffffm-button-bind',
+	'gluon-autoupdater-branch-fix',
+	'iwinfo',
+	'respondd-module-airtime',
+})
+
 -- MYK hackery - proceed at your own risk
 
 -- Local package sets
