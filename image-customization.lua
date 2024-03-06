@@ -265,7 +265,11 @@ if (
     target('ramips', 'mt7621') or
     target('ramips', 'mt76x8') or
     target('rockchip', 'armv8') or
-    target('sunxi', 'cortexa7')
+    target('sunxi', 'cortexa7') or
+    target('x86', '64') or
+    target('x86', 'generic') or
+    target('x86', 'geode') or
+    target('x86', 'legacy') 
    ) and not device(exclude_tls) then
         packages(pkgs_tls)
 end
