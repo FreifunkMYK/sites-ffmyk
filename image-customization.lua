@@ -138,6 +138,8 @@ local pkgs_tools = {
 
 local exclude_tls = {
     'd-link-dir825b1',
+    'netgear-wndr3700',
+    'nexx-wt3020-8m',
 }
 
 local exclude_usb = {
