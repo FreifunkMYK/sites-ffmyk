@@ -137,6 +137,7 @@ local pkgs_tools = {
 --exclusion lists
 
 local exclude_tls = {
+    'cudy-wr1000',
     'd-link-dap-1330-a1',
     'd-link-dap-1365-a1',
     'd-link-dir-505',
