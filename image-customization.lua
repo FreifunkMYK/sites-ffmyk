@@ -243,7 +243,7 @@ local exclude_usb = {
 
 --Additional packages for specific targets
 if (
-    not device(exclude_tls) then
+    not device(exclude_tls)) then
         packages(pkgs_tls)
 end
 
