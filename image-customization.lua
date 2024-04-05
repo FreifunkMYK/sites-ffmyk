@@ -157,6 +157,7 @@ local exclude_tls = {
     'tp-link-cpe510-v1',
     'tp-link-cpe510-v2',
     'tp-link-cpe510-v3',
+    'tp-link-re200-v2',
     'tp-link-re200-v3',
     'tp-link-td-w8970',
     'tp-link-wbs210-v1',
