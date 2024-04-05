@@ -151,6 +151,7 @@ local exclude_usb = {
     'd-link-dap-1330-a1',
     'd-link-dap-1365-a1',
     'd-link-dir-505',
+    'd-link_dgs-1210-10p',
     'devolo-wifi-pro-1200e',
     'devolo-wifi-pro-1200i',
     'devolo-wifi-pro-1750c',
