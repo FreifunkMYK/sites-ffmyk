@@ -213,6 +213,7 @@ local exclude_usb = {
     'tp-link-tl-wr810n-v1',
     'tp-link-tl-wr1043nd-v2',
     'tp-link-tl-wr1043nd-v3',
+    'tp-link-tl-wr2543n-nd',
     'tp-link-wbs210-v1',
     'tp-link-wbs210-v2',
     'tp-link-wbs510-v1',
