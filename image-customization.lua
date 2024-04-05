@@ -145,6 +145,7 @@ local exclude_tls = {
 local exclude_usb = {
     'avm-fritz-wlan-repeater-300e',
     'avm-fritz-wlan-repeater-450e',
+    'cudy-wr1000',
     'd-link-dap-1330-a1',
     'd-link-dap-1365-a1',
     'd-link-dir-505',
