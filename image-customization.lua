@@ -139,6 +139,7 @@ local pkgs_tools = {
 local exclude_tls = {
     'd-link-dap-1330-a1',
     'd-link-dir825b1',
+    'netgear-ex3700',
     'netgear-wndr3700',
     'tp-link-re200-v3',
     'tp-link-td-w8970',
@@ -237,7 +238,6 @@ local exclude_usb = {
     'tp-link-td-w8980',
     'avm-fritz-box-7412',
     'gl.inet-microuter-n300',
-    'netgear-ex3700',
     'netgear-ex6150',
     'netgear-r6020',
     'ubiquiti-edgerouter-x-sfp',
