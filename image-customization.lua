@@ -145,6 +145,7 @@ local exclude_tls = {
     'netgear-ex3700',
     'netgear-wndr3700',
     'tp-link-archer-c6-v2-eu-ru-jp',
+    'tp-link-archer-c20i',
     'tp-link-re200-v3',
     'tp-link-td-w8970',
     'nexx-wt3020-8m',
