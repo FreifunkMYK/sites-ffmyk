@@ -138,9 +138,13 @@ local pkgs_tools = {
 
 local exclude_tls = {
     'd-link-dap-1330-a1',
+    'd-link-dap-1365-a1',
+    'd-link-dir-505',
     'd-link-dir825b1',
+    'librerouter-v1',
     'netgear-ex3700',
     'netgear-wndr3700',
+    'tp-link-archer-c6-v2-eu-ru-jp',
     'tp-link-re200-v3',
     'tp-link-td-w8970',
     'nexx-wt3020-8m',
