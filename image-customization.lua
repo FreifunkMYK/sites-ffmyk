@@ -147,6 +147,7 @@ local exclude_tls = {
     'tp-link-archer-c6-v2-eu-ru-jp',
     'tp-link-archer-c60-v1',
     'tp-link-archer-c20i',
+    'tp-link-archer-c20-v1',
     'tp-link-cpe210-v1',
     'tp-link-cpe210-v2',
     'tp-link-cpe210-v3',
