@@ -140,6 +140,7 @@ local exclude_tls = {
     'd-link-dir825b1',
     'netgear-wndr3700',
     'tp-link-re200-v3',
+    'tp-link-td-w8970',
     'nexx-wt3020-8m',
 }
 
