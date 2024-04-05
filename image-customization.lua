@@ -24,7 +24,7 @@ if not device_class('tiny') then
         'wireless-encryption-wpa3'
     })
 else
-    features({
+    packages({
         'wpa-supplicant-dummy'
     })
 end
