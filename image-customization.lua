@@ -168,6 +168,7 @@ local exclude_tls = {
     'tp-link-tl-wdr3600-v1',
     'tp-link-tl-wr2543n-nd',
     'tp-link-tl-wr810n-v1',
+    'tp-link-tl-wr841n-v13',
     'nexx-wt3020-8m',
     'ubiquiti-unifi-ap',
 }
