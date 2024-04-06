@@ -170,6 +170,7 @@ local exclude_tls = {
     'tp-link-wbs210-v2',
     'tp-link-wbs510-v1',
     'netgear-wnr2200-8m',
+    'tp-link-tl-mr3020-v3',
     'tp-link-tl-wa801nd-v5',
     'tp-link-tl-wdr3500-v1',
     'tp-link-tl-wdr3600-v1',
