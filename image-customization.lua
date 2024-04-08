@@ -259,6 +259,7 @@ local exclude_usb = {
     'tp-link-archer-c20-v5',
     'tp-link-tl-mr3020-v3',
     'tp-link-tl-mr3420-v5',
+    'tp-link-tl-mr6400-v5',
     'tp-link-tl-wr902ac-v3',
     'netgear-r6020',
     'tp-link-re200-v2',
