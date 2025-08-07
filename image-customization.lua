@@ -214,6 +214,7 @@ local exclude_usb = {
     'gl.inet-vixmini',
     'librerouter-v1',
     'netgear-ex3700',
+    'netgear-ex6130',
     'netgear-ex6150',
     'netgear-ex6150',
     'netgear-r6020',
