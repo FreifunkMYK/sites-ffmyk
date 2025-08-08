@@ -30,7 +30,7 @@ else
 end
 
 packages({
-    'ffffm-button-bind',
+	'ffffm-button-bind',
 	'gluon-autoupdater-branch-fix',
 	'iwinfo',
 	'respondd-module-airtime',
@@ -207,17 +207,14 @@ local exclude_usb = {
     'devolo-wifi-pro-1750i',
     'devolo-wifi-pro-1750x',
     'gl-mt300n-v2',
-    'gl.inet-gl-ar300m-lite', --list below copied from Freifunk Hannover
+    'gl.inet-gl-ar300m-lite',
     'gl.inet-gl-ar750',
     'gl.inet-microuter-n300',
-    'gl.inet-vixmini',
     'gl.inet-vixmini',
     'librerouter-v1',
     'netgear-ex3700',
     'netgear-ex6130',
     'netgear-ex6150',
-    'netgear-ex6150',
-    'netgear-r6020',
     'netgear-r6020',
     'netgear-wndr3700',
     'netgear-wndr3700-v2',
