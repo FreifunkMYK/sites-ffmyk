@@ -1,0 +1,17 @@
+diff --git a/targets/ramips-mt7620 b/targets/ramips-mt7620
+index cf70ceac..2996aae8 100644
+--- a/targets/ramips-mt7620
++++ b/targets/ramips-mt7620
+@@ -30,9 +30,9 @@ device('netgear-ex3700', 'netgear_ex3700', {
+ 	factory_ext = '.chk',
+ })
+ 
+-device('netgear-ex6130', 'netgear_ex6130', {
+-	factory_ext = '.chk',
+-})
++-- device('netgear-ex6130', 'netgear_ex6130', {
++-- 	factory_ext = '.chk',
++-- })
+ 
+ -- Nexx
+ 

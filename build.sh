@@ -12,19 +12,10 @@ TARGETS=$2
 rm -rf $SCRIPTPATH/output/$RELEASE
 mkdir -p $SCRIPTPATH/output/$RELEASE/packages
 
-if [ ! -h ${SCRIPTPATH}/gluon/site ]; then
-	ln -s ${SCRIPTPATH} ${SCRIPTPATH}/gluon/site
-fi
-
 cd gluon
 if [ -z "$TARGETS" ]; then
     TARGETS="$(make list-targets)"
 fi
-
-make update
-for TARGET in ${TARGETS}; do
-    make -j$((CORES+1)) GLUON_TARGET=${TARGET} download
-done
 
 FAILED_TARGETS=
 for TARGET in ${TARGETS}; do
@@ -41,7 +32,6 @@ for TARGET in $FAILED_TARGETS; do
     make -j1 GLUON_TARGET=${TARGET} GLUON_RELEASE=${RELEASE} GLUON_AUTOUPDATER_BRANCH=stable V=s
     RESULT=$?
     if [ $RESULT -ne 0 ]; then
-        make clean GLUON_TARGET=${TARGET}
         echo $TARGET failed again;
         echo "FAILED_TARGETS: $FAILED_TARGETS"
         exit 1;

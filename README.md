@@ -10,6 +10,7 @@
 3. Download dependencies and initialize the gluon modules
     ```
     git submodule update --init                                    # download the gluon submodule
+    ./prepare.sh                                                   # prepare the gluon directory for building
     ```
 4. Build gluon. Files will be in *output/*. By default all targets will be compiled, you can optionally specify targets to build as a second argument.
     ```
