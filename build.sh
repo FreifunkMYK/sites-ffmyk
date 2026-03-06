@@ -5,8 +5,9 @@ SCRIPTPATH="$(dirname "$(readlink -e "$0")" )"
 
 CORES=$(nproc)
 
-RELEASE=$1
+[ "$#" -gt 0 ] || { echo "$0 <RELEASE> [TARGET]"; exit 1; }
 
+RELEASE=$1
 TARGETS=$2
 
 rm -rf $SCRIPTPATH/output/$RELEASE
