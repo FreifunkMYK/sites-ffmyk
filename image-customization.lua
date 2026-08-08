@@ -18,7 +18,13 @@ features({
     'web-private-wifi'
 })
 
-if not device_class('tiny') then
+-- ath10k 5GHz firmware is bigger than on other devices sharing the same flash budget
+local exclude_sae_flash = {
+    'tp-link-archer-c6-v2-eu-ru-jp',
+    'tp-link-archer-c60-v1',
+}
+
+if not device_class('tiny') and not device(exclude_sae_flash) then
     features({
         'mesh-wireless-sae',
         'wireless-encryption-wpa3'
@@ -188,6 +194,11 @@ local exclude_tls = {
     'tp-link-wbs210-v2',
     'tp-link-wbs510-v1',
     'ubiquiti-unifi-ap',
+    'ubiquiti-rocket-m-xm',
+    'ubiquiti-nanostation-m-xw',
+    'ubiquiti-nanostation-loco-m-xw',
+    'tp-link-archer-c50-v6-ca-eu-ru',
+    'tp-link-tl-wr902ac-v4',
 }
 
 local exclude_usb = {
@@ -290,6 +301,11 @@ local exclude_usb = {
     'ubiquiti-unifi-ap-outdoor+',
     'ubiquiti-unifi-ap-pro',
     'zyxel-nwa55axe',
+    'ubiquiti-rocket-m-xm',
+    'ubiquiti-nanostation-m-xw',
+    'ubiquiti-nanostation-loco-m-xw',
+    'tp-link-archer-c50-v6-ca-eu-ru',
+    'tp-link-tl-wr902ac-v4',
 }
 
 --Additional packages for specific targets
