@@ -1,7 +1,5 @@
 features({
-    'autoupdater-fallback',
     'config-mode-domain-select',
-    'config-mode-geo-location-osm',
     'config-mode-mesh-vpn',
     'ebtables-filter-multicast',
     'ebtables-filter-ra-dhcp',
@@ -9,14 +7,76 @@ features({
     'ebtables-source-filter',
     'mesh-batman-adv-15',
     'mesh-vpn-wireguard-vxlan',
-    'radv-filterd',
     'respondd',
     'setup-mode',
     'status-page',
     'web-advanced',
     'web-wizard',
-    'web-private-wifi'
 })
+
+-- Devices too flash-constrained to carry every optional package - kept as a single list so
+-- TLS, USB, SAE/WPA3 (mbedtls crypto stack) and the small extra-feature exclusions below all
+-- agree on which devices are "tight". wifi.mesh.sae is disabled site-wide for every ffmyk
+-- domain anyway, so dropping the SAE/WPA3 mbedtls stack here has no functional effect - it's
+-- pure flash savings on devices that can't spare the space to carry unused crypto.
+local exclude_tls = {
+    'cudy-wr1000',
+    'd-link-dap-1330-a1',
+    'd-link-dap-1365-a1',
+    'd-link-dir-505',
+    'd-link-dir825b1',
+    'gl.inet-vixmini',
+    'librerouter-v1',
+    'netgear-ex3700',
+    'netgear-ex6130',
+    'netgear-r6020',
+    'netgear-wndr3700',
+    'netgear-wnr2200-8m',
+    'nexx-wt3020-8m',
+    'tp-link-archer-c2-v1',
+    'tp-link-archer-c20-v1',
+    'tp-link-archer-c20-v4',
+    'tp-link-archer-c20-v5',
+    'tp-link-archer-c20i',
+    'tp-link-archer-c50-v1',
+    'tp-link-archer-c50-v3',
+    'tp-link-archer-c50-v4',
+    'tp-link-archer-c6-v2-eu-ru-jp',
+    'tp-link-archer-c60-v1',
+    'tp-link-cpe210-v1',
+    'tp-link-cpe210-v2',
+    'tp-link-cpe210-v3',
+    'tp-link-cpe220-v3',
+    'tp-link-cpe510-v1',
+    'tp-link-cpe510-v2',
+    'tp-link-cpe510-v3',
+    'tp-link-re200-v2',
+    'tp-link-re200-v3',
+    'tp-link-re200-v4',
+    'tp-link-td-w8970',
+    'tp-link-tl-mr3020-v3',
+    'tp-link-tl-mr3420-v5',
+    'tp-link-tl-mr6400-v5',
+    'tp-link-tl-wa801nd-v5',
+    'tp-link-tl-wdr3500-v1',
+    'tp-link-tl-wdr3600-v1',
+    'tp-link-tl-wdr4300-v1',
+    'tp-link-tl-wr1043nd-v2',
+    'tp-link-tl-wr1043nd-v3',
+    'tp-link-tl-wr2543n-nd',
+    'tp-link-tl-wr810n-v1',
+    'tp-link-tl-wr841n-v13',
+    'tp-link-tl-wr902ac-v3',
+    'tp-link-wbs210-v1',
+    'tp-link-wbs210-v2',
+    'tp-link-wbs510-v1',
+    'ubiquiti-unifi-ap',
+    'ubiquiti-rocket-m-xm',
+    'ubiquiti-nanostation-m-xw',
+    'ubiquiti-nanostation-loco-m-xw',
+    'tp-link-archer-c50-v6-ca-eu-ru',
+    'tp-link-tl-wr902ac-v4',
+}
 
 -- ath10k 5GHz firmware is bigger than on other devices sharing the same flash budget
 local exclude_sae_flash = {
@@ -24,7 +84,7 @@ local exclude_sae_flash = {
     'tp-link-archer-c60-v1',
 }
 
-if not device_class('tiny') and not device(exclude_sae_flash) then
+if not device_class('tiny') and not device(exclude_sae_flash) and not device(exclude_tls) then
     features({
         'mesh-wireless-sae',
         'wireless-encryption-wpa3'
@@ -39,7 +99,6 @@ packages({
 	'ffffm-button-bind',
 	'gluon-autoupdater-branch-fix',
 	'iwinfo',
-	'respondd-module-airtime',
 })
 
 -- MYK hackery - proceed at your own risk
@@ -141,65 +200,7 @@ local pkgs_tools = {
 }
 
 --exclusion lists
-
-local exclude_tls = {
-    'cudy-wr1000',
-    'd-link-dap-1330-a1',
-    'd-link-dap-1365-a1',
-    'd-link-dir-505',
-    'd-link-dir825b1',
-    'gl.inet-vixmini',
-    'librerouter-v1',
-    'netgear-ex3700',
-    'netgear-ex6130',
-    'netgear-r6020',
-    'netgear-wndr3700',
-    'netgear-wnr2200-8m',
-    'nexx-wt3020-8m',
-    'tp-link-archer-c2-v1',
-    'tp-link-archer-c20-v1',
-    'tp-link-archer-c20-v4',
-    'tp-link-archer-c20-v5',
-    'tp-link-archer-c20i',
-    'tp-link-archer-c50-v1',
-    'tp-link-archer-c50-v3',
-    'tp-link-archer-c50-v4',
-    'tp-link-archer-c6-v2-eu-ru-jp',
-    'tp-link-archer-c60-v1',
-    'tp-link-cpe210-v1',
-    'tp-link-cpe210-v2',
-    'tp-link-cpe210-v3',
-    'tp-link-cpe220-v3',
-    'tp-link-cpe510-v1',
-    'tp-link-cpe510-v2',
-    'tp-link-cpe510-v3',
-    'tp-link-re200-v2',
-    'tp-link-re200-v3',
-    'tp-link-re200-v4',
-    'tp-link-td-w8970',
-    'tp-link-tl-mr3020-v3',
-    'tp-link-tl-mr3420-v5',
-    'tp-link-tl-mr6400-v5',
-    'tp-link-tl-wa801nd-v5',
-    'tp-link-tl-wdr3500-v1',
-    'tp-link-tl-wdr3600-v1',
-    'tp-link-tl-wdr4300-v1',
-    'tp-link-tl-wr1043nd-v2',
-    'tp-link-tl-wr1043nd-v3',
-    'tp-link-tl-wr2543n-nd',
-    'tp-link-tl-wr810n-v1',
-    'tp-link-tl-wr841n-v13',
-    'tp-link-tl-wr902ac-v3',
-    'tp-link-wbs210-v1',
-    'tp-link-wbs210-v2',
-    'tp-link-wbs510-v1',
-    'ubiquiti-unifi-ap',
-    'ubiquiti-rocket-m-xm',
-    'ubiquiti-nanostation-m-xw',
-    'ubiquiti-nanostation-loco-m-xw',
-    'tp-link-archer-c50-v6-ca-eu-ru',
-    'tp-link-tl-wr902ac-v4',
-}
+-- (exclude_tls now declared near the top of the file, shared with the SAE exclusion above)
 
 local exclude_usb = {
     'avm-fritz-box-7412',
@@ -312,6 +313,18 @@ local exclude_usb = {
 if (
     not device(exclude_tls)) then
         packages(pkgs_tls)
+end
+
+-- Same flash-constrained devices as exclude_tls above still overflow even without TLS/USB -
+-- drop optional features/packages that don't affect core mesh function for them too.
+if not device(exclude_tls) then
+    features({
+        'autoupdater-fallback',
+        'config-mode-geo-location-osm',
+        'radv-filterd',
+        'web-private-wifi',
+    })
+    packages({'respondd-module-airtime'})
 end
 
 if (
