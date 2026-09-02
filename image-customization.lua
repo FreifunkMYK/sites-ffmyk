@@ -332,7 +332,7 @@ if (
         packages(pkgs_tls)
 end
 
-if not device_class('tiny') and not device(exclude_sae_flash) then
+if not device_class('tiny') and not device(exclude_sae) then
     features({
         'mesh-wireless-sae',
         'wireless-encryption-wpa3'
