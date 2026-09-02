@@ -208,7 +208,14 @@ local exclude_sae = {
     'tp-link-wbs210-v2',
     'tp-link-wbs510-v1',
     'ubiquiti-unifi-ap',
-    'ubiquiti-rocket-m-xm'
+    'ubiquiti-rocket-m-xm',
+    'avm-fritz-wlan-repeater-1750e',
+    'sophos-ap15',
+    'tp-link-archer-c2-v3',
+    'tp-link-archer-c25-v1',
+    'tp-link-archer-c58-v1',
+    'tp-link-archer-d50-v1',
+    'tp-link-tl-wr902ac-v1'
 }
 
 local exclude_usb = {
