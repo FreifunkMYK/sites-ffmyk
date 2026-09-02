@@ -18,23 +18,6 @@ features({
     'web-private-wifi'
 })
 
--- ath10k 5GHz firmware is bigger than on other devices sharing the same flash budget
-local exclude_sae_flash = {
-    'tp-link-archer-c6-v2-eu-ru-jp',
-    'tp-link-archer-c60-v1',
-}
-
-if not device_class('tiny') and not device(exclude_sae_flash) then
-    features({
-        'mesh-wireless-sae',
-        'wireless-encryption-wpa3'
-    })
-else
-    packages({
-        'wpa-supplicant-dummy'
-    })
-end
-
 packages({
 	'ffffm-button-bind',
 	'gluon-autoupdater-branch-fix',
@@ -131,6 +114,15 @@ local pkgs_tls = {
 	'libustream-openssl'
 }
 
+local pkgs_sae = {
+    'mesh-wireless-sae',
+    'wireless-encryption-wpa3'
+}
+
+local pkgs_nosae = {
+    'wpa-supplicant-dummy'
+}
+
 local pkgs_tools = {
 	'iperf3',
 	'socat',
@@ -199,6 +191,24 @@ local exclude_tls = {
     'ubiquiti-nanostation-loco-m-xw',
     'tp-link-archer-c50-v6-ca-eu-ru',
     'tp-link-tl-wr902ac-v4',
+}
+
+-- firmware on these devices is too big, even without just dropping TLS
+local exclude_sae = {
+    'tp-link-archer-c6-v2-eu-ru-jp',
+    'tp-link-archer-c60-v1',
+    'tp-link-cpe210-v1',
+    'tp-link-cpe210-v2',
+    'tp-link-cpe210-v3',
+    'tp-link-cpe220-v3',
+    'tp-link-cpe510-v1',
+    'tp-link-cpe510-v2',
+    'tp-link-cpe510-v3',
+    'tp-link-wbs210-v1',
+    'tp-link-wbs210-v2',
+    'tp-link-wbs510-v1',
+    'ubiquiti-unifi-ap',
+    'ubiquiti-rocket-m-xm'
 }
 
 local exclude_usb = {
@@ -308,10 +318,22 @@ local exclude_usb = {
     'tp-link-tl-wr902ac-v4',
 }
 
---Additional packages for specific targets
+--Additional packages depending on device/target
+
 if (
     not device(exclude_tls)) then
         packages(pkgs_tls)
+end
+
+if not device_class('tiny') and not device(exclude_sae_flash) then
+    features({
+        'mesh-wireless-sae',
+        'wireless-encryption-wpa3'
+    })
+else
+    packages({
+        'wpa-supplicant-dummy'
+    })
 end
 
 if (
