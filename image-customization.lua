@@ -19,10 +19,10 @@ features({
 })
 
 packages({
-	'ffffm-button-bind',
-	'gluon-autoupdater-branch-fix',
-	'iwinfo',
-	'respondd-module-airtime',
+    'ffffm-button-bind',
+    'gluon-autoupdater-branch-fix',
+    'iwinfo',
+    'respondd-module-airtime',
 })
 
 -- MYK hackery - proceed at your own risk
@@ -30,8 +30,8 @@ packages({
 -- Local package sets
 local pkgs_usb = {
     'usbutils',
-	'kmod-usb-core',
-	'kmod-usb2',
+    'kmod-usb-core',
+    'kmod-usb2',
 }
 
 local pkgs_usb_hid = {
@@ -70,30 +70,30 @@ local pkgs_usb_storage = {
 
 local pkgs_usb_net = {
     'usb-modeswitch',
-	'ffda-usb-wan-hotplug',
-	'ffka-gluon-web-usb-wan-hotplug',
+    'ffda-usb-wan-hotplug',
+    'ffka-gluon-web-usb-wan-hotplug',
     'kmod-mii',
     'kmod-usb-net',
     'kmod-usb-net-asix',
     'kmod-usb-net-asix-ax88179',
     'kmod-usb-net-cdc-eem',
     'kmod-usb-net-cdc-ether',
-	'kmod-usb-net-cdc-mbim',
-	'kmod-usb-net-cdc-ncm',
+    'kmod-usb-net-cdc-mbim',
+    'kmod-usb-net-cdc-ncm',
     'kmod-usb-net-cdc-subset',
     'kmod-usb-net-dm9601-ether',
     'kmod-usb-net-hso',
-	'kmod-usb-net-huawei-cdc-ncm',
+    'kmod-usb-net-huawei-cdc-ncm',
     'kmod-usb-net-ipheth',
-	'kmod-usb-net-kalmia',
-	'kmod-usb-net-kaweth',
+    'kmod-usb-net-kalmia',
+    'kmod-usb-net-kaweth',
     'kmod-usb-net-mcs7830',
     'kmod-usb-net-pegasus',
-	'kmod-usb-net-qmi-wwan',
+    'kmod-usb-net-qmi-wwan',
     'kmod-usb-net-rndis',
-	'kmod-usb-net-rtl8150',
+    'kmod-usb-net-rtl8150',
     'kmod-usb-net-rtl8152',
-	'kmod-usb-net-sierrawireless',
+    'kmod-usb-net-sierrawireless',
     'kmod-usb-net-smsc95xx',
 }
 
@@ -103,15 +103,15 @@ local pkgs_pci = {
 
 local pkgs_pci_net = {
     'kmod-sky2',
-	'kmod-r8169',
-	'kmod-forcedeth',
-	'kmod-8139too',
+    'kmod-r8169',
+    'kmod-forcedeth',
+    'kmod-8139too',
     'kmod-bnx2', -- Broadcom NetExtreme BCM5706/5708/5709/5716
 }
 
 local pkgs_tls = {
     'ca-bundle',
-	'libustream-openssl'
+    'libustream-openssl'
 }
 
 local pkgs_sae = {
@@ -124,10 +124,10 @@ local pkgs_nosae = {
 }
 
 local pkgs_tools = {
-	'iperf3',
-	'socat',
-	'tcpdump',
-	'vnstat',
+    'iperf3',
+    'socat',
+    'tcpdump',
+    'vnstat',
     'haveged',
     'bash'
 }
