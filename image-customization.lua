@@ -18,28 +18,11 @@ features({
     'web-private-wifi'
 })
 
--- ath10k 5GHz firmware is bigger than on other devices sharing the same flash budget
-local exclude_sae_flash = {
-    'tp-link-archer-c6-v2-eu-ru-jp',
-    'tp-link-archer-c60-v1',
-}
-
-if not device_class('tiny') and not device(exclude_sae_flash) then
-    features({
-        'mesh-wireless-sae',
-        'wireless-encryption-wpa3'
-    })
-else
-    packages({
-        'wpa-supplicant-dummy'
-    })
-end
-
 packages({
-	'ffffm-button-bind',
-	'gluon-autoupdater-branch-fix',
-	'iwinfo',
-	'respondd-module-airtime',
+    'ffffm-button-bind',
+    'gluon-autoupdater-branch-fix',
+    'iwinfo',
+    'respondd-module-airtime',
 })
 
 -- MYK hackery - proceed at your own risk
@@ -47,8 +30,8 @@ packages({
 -- Local package sets
 local pkgs_usb = {
     'usbutils',
-	'kmod-usb-core',
-	'kmod-usb2',
+    'kmod-usb-core',
+    'kmod-usb2',
 }
 
 local pkgs_usb_hid = {
@@ -87,30 +70,30 @@ local pkgs_usb_storage = {
 
 local pkgs_usb_net = {
     'usb-modeswitch',
-	'ffda-usb-wan-hotplug',
-	'ffka-gluon-web-usb-wan-hotplug',
+    'ffda-usb-wan-hotplug',
+    'ffka-gluon-web-usb-wan-hotplug',
     'kmod-mii',
     'kmod-usb-net',
     'kmod-usb-net-asix',
     'kmod-usb-net-asix-ax88179',
     'kmod-usb-net-cdc-eem',
     'kmod-usb-net-cdc-ether',
-	'kmod-usb-net-cdc-mbim',
-	'kmod-usb-net-cdc-ncm',
+    'kmod-usb-net-cdc-mbim',
+    'kmod-usb-net-cdc-ncm',
     'kmod-usb-net-cdc-subset',
     'kmod-usb-net-dm9601-ether',
     'kmod-usb-net-hso',
-	'kmod-usb-net-huawei-cdc-ncm',
+    'kmod-usb-net-huawei-cdc-ncm',
     'kmod-usb-net-ipheth',
-	'kmod-usb-net-kalmia',
-	'kmod-usb-net-kaweth',
+    'kmod-usb-net-kalmia',
+    'kmod-usb-net-kaweth',
     'kmod-usb-net-mcs7830',
     'kmod-usb-net-pegasus',
-	'kmod-usb-net-qmi-wwan',
+    'kmod-usb-net-qmi-wwan',
     'kmod-usb-net-rndis',
-	'kmod-usb-net-rtl8150',
+    'kmod-usb-net-rtl8150',
     'kmod-usb-net-rtl8152',
-	'kmod-usb-net-sierrawireless',
+    'kmod-usb-net-sierrawireless',
     'kmod-usb-net-smsc95xx',
 }
 
@@ -120,22 +103,31 @@ local pkgs_pci = {
 
 local pkgs_pci_net = {
     'kmod-sky2',
-	'kmod-r8169',
-	'kmod-forcedeth',
-	'kmod-8139too',
+    'kmod-r8169',
+    'kmod-forcedeth',
+    'kmod-8139too',
     'kmod-bnx2', -- Broadcom NetExtreme BCM5706/5708/5709/5716
 }
 
 local pkgs_tls = {
     'ca-bundle',
-	'libustream-openssl'
+    'libustream-openssl'
+}
+
+local pkgs_sae = {
+    'mesh-wireless-sae',
+    'wireless-encryption-wpa3'
+}
+
+local pkgs_nosae = {
+    'wpa-supplicant-dummy'
 }
 
 local pkgs_tools = {
-	'iperf3',
-	'socat',
-	'tcpdump',
-	'vnstat',
+    'iperf3',
+    'socat',
+    'tcpdump',
+    'vnstat',
     'haveged',
     'bash'
 }
@@ -199,6 +191,31 @@ local exclude_tls = {
     'ubiquiti-nanostation-loco-m-xw',
     'tp-link-archer-c50-v6-ca-eu-ru',
     'tp-link-tl-wr902ac-v4',
+}
+
+-- firmware on these devices is too big, even without just dropping TLS
+local exclude_sae = {
+    'tp-link-archer-c6-v2-eu-ru-jp',
+    'tp-link-archer-c60-v1',
+    'tp-link-cpe210-v1',
+    'tp-link-cpe210-v2',
+    'tp-link-cpe210-v3',
+    'tp-link-cpe220-v3',
+    'tp-link-cpe510-v1',
+    'tp-link-cpe510-v2',
+    'tp-link-cpe510-v3',
+    'tp-link-wbs210-v1',
+    'tp-link-wbs210-v2',
+    'tp-link-wbs510-v1',
+    'ubiquiti-unifi-ap',
+    'ubiquiti-rocket-m-xm',
+    'avm-fritz-wlan-repeater-1750e',
+    'sophos-ap15',
+    'tp-link-archer-c2-v3',
+    'tp-link-archer-c25-v1',
+    'tp-link-archer-c58-v1',
+    'tp-link-archer-d50-v1',
+    'tp-link-tl-wr902ac-v1'
 }
 
 local exclude_usb = {
@@ -308,10 +325,22 @@ local exclude_usb = {
     'tp-link-tl-wr902ac-v4',
 }
 
---Additional packages for specific targets
+--Additional packages depending on device/target
+
 if (
     not device(exclude_tls)) then
         packages(pkgs_tls)
+end
+
+if not device_class('tiny') and not device(exclude_sae) then
+    features({
+        'mesh-wireless-sae',
+        'wireless-encryption-wpa3'
+    })
+else
+    packages({
+        'wpa-supplicant-dummy'
+    })
 end
 
 if (
